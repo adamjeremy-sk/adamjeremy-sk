@@ -1,8 +1,8 @@
 # Adam Jeremy
 
-I build software on Linux, and I am currently running a deliberate experiment in how a single developer can use
-artificial-intelligence models to write a substantial native application without surrendering control over its
-correctness, its structure or its history.
+I build software on Linux and I'm running an experiment in AI-assisted development: can a single developer use local 
+and cloud models to build a substantial native application without giving up control of architecture, correctness, or 
+source history?
 
 The vehicle for that experiment is **[Vermilion Editor](https://github.com/adamjeremy-sk/Vermilion-Editor)**, a code
 editor written from scratch in C++17 on GTK 4 and GtkSourceView 5, with a built-in agent, a debugger, a terminal and a
