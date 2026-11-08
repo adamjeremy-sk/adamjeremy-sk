@@ -8,24 +8,6 @@ The experiment is being conducted through Vermilion Editor, a code editor writte
 
 ---
 
-## TL;DR
-I'm building Vermilion Editor, a native Linux code editor in C++17.
-
-The editor is interesting, but the process is the real experiment.
-
-Instead of letting one AI model plan, write and approve code, I split those responsibilities across three participants:
-
-Me, as owner and final authority
-Claude, as planner and auditor
-A local Qwen model, as the coding agent
-Every change passes through a gate process that produces verifiable evidence, keeps memory in project files rather than conversations, and assumes that every model will eventually forget instructions, make mistakes, or attempt shortcuts.
-
-The question I'm trying to answer is:
-
-Can a single developer use AI extensively without giving up control of architecture, verification, or source history?
-
----
-
 ## The idea
 
 Most AI-assisted coding today asks one model to do everything: understand the request, plan the change, write the code, and judge whether the result is acceptable. That arrangement concentrates both execution and verification in the same place, so the model is effectively grading its own homework.
