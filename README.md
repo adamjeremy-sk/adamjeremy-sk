@@ -103,9 +103,6 @@ The failures have been more instructive than the successes, and each one has cha
   the problem honestly instead of silently working around it, which is precisely the behaviour the protocol rewards.
 - **Build flags leaked across targets.** The `-fno-exceptions` flag reached the test executables through a public link
   dependency, contrary to the specification. A fresh audit of the compile commands caught it, and the next gate fixed it.
-- **The history needed rewriting once.** The project began as a fork of an older editor before I abandoned that approach
-  and restarted from scratch. I rewrote the repository history so that it begins at the reset, with a single, recorded
-  force-push.
 
 ---
 
