@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | @adamjeremy-sk</title>
+  <meta name="description" content="Contact Adam Jeremy.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>@adamjeremy-sk</h1>
+
+  <nav>
+    <hr>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="projects.html">Projects</a> |
+      <strong>Contact</strong> |
+      <a href="https://github.com/adamjeremy-sk">GitHub</a>
+    </p>
+    <hr>
+  </nav>
+
+  <main>
+    <h2>Contact</h2>
+
+    <p>
+      Fill in the form below and press Send. Your email program will open with the message
+      ready to go.
+    </p>
+
+    <form id="contact-form" action="mailto:adamhainstock@tutamail.com" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="body">Message</label>
+      <textarea id="body" name="body" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+
+    <p class="small">
+      If nothing happens when you press Send, you may not have an email program set up.
+      You can write to me directly at
+      <a href="mailto:adamhainstock@tutamail.com">adamhainstock@tutamail.com</a>.
+    </p>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2026 Adam Jeremy</p>
+  </footer>
+
+  <script>
+    // Build a mailto: link from the form fields and open the default email client.
+    // Without JavaScript, the form falls back to its plain mailto: action.
+    (function () {
+      var form = document.getElementById('contact-form');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        var name = document.getElementById('name').value.trim();
+        var subject = document.getElementById('subject').value.trim();
+        var body = document.getElementById('body').value.trim();
+
+        var fullBody = body + '\r\n\r\n- ' + name;
+
+        var href = 'mailto:adamhainstock@tutamail.com'
+          + '?subject=' + encodeURIComponent(subject)
+          + '&body=' + encodeURIComponent(fullBody);
+
+        window.location.href = href;
+      });
+    })();
+  </script>
+
+</body>
+</html>

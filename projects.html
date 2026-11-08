@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | @adamjeremy-sk</title>
+  <meta name="description" content="Projects by Adam Jeremy: Vermilion Editor and WeatherAPP Libre.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>@adamjeremy-sk</h1>
+
+  <nav>
+    <hr>
+    <p>
+      <a href="index.html">Home</a> |
+      <strong>Projects</strong> |
+      <a href="contact.html">Contact</a> |
+      <a href="https://github.com/adamjeremy-sk">GitHub</a>
+    </p>
+    <hr>
+  </nav>
+
+  <main>
+    <h2>Projects</h2>
+
+    <h3>Vermilion Editor</h3>
+
+    <p>
+      Vermilion Editor is a native Linux code editor, written in C++17 directly against the C
+      interfaces of GTK 4 and GtkSourceView 5, for developers who work alongside an AI agent and
+      would rather keep editing, review, compilation and debugging inside one application than
+      spread them across several. The agent operates through the editor's own tools, within
+      permission presets the user configures, and every turn it completes is recorded as a change
+      set that can be compared side by side and reverted one hunk at a time. A local llama.cpp
+      server is supported as a first-class endpoint, commercial providers are accessed with the
+      user's own API keys, and the editor collects no telemetry of any kind.
+    </p>
+
+    <p>
+      The project also contains CTXMon, a native C++ reimplementation of my original Python
+      utility for monitoring llama.cpp servers while they are generating. By polling each
+      server's <code>/slots</code> and <code>/props</code> endpoints and parsing its log output,
+      CTXMon reports context utilization, generation and prompt-processing speed, recent requests
+      and GPU memory, and it issues warnings as the context window approaches its limit. It will
+      be available both as a panel inside the editor and as an independent program, and its
+      interface-independent core, which is the current development milestone, is tested against
+      the output of the original Python implementation.
+    </p>
+
+    <table>
+      <tr><th scope="row">Language</th><td>C++17</td></tr>
+      <tr><th scope="row">Toolkit</th><td>GTK 4, GtkSourceView 5 (plain C APIs)</td></tr>
+      <tr><th scope="row">Build</th><td>CMake</td></tr>
+      <tr><th scope="row">Tests</th><td>GoogleTest via CTest, 77 tests</td></tr>
+      <tr><th scope="row">Platform</th><td>Linux (Ubuntu 24.04 reference), Wayland and X11</td></tr>
+      <tr><th scope="row">Version</th><td>Pre-alpha, no releases; milestone M1</td></tr>
+      <tr><th scope="row">Licence</th><td>GPL-3.0-or-later</td></tr>
+      <tr><th scope="row">Source</th><td><a href="https://github.com/adamjeremy-sk/Vermilion-Editor">github.com/adamjeremy-sk/Vermilion-Editor</a></td></tr>
+    </table>
+
+    <hr>
+
+    <h3>WeatherAPP Libre</h3>
+
+    <p>
+      WeatherAPP Libre is a weather and natural-light planning application for Android, designed
+      for photographers, anglers, hunters and amateur astronomers whose plans depend on more than
+      the daily high and the chance of rain. It requests no location permission, relying instead
+      on cities the user selects manually, and it contains no advertising, user accounts or
+      behavioural analytics. Users can choose among five numerical forecast models and receive
+      current conditions, 36-hour hourly and seven-day forecasts, and additional detail on air
+      quality, ultraviolet exposure and wind.
+    </p>
+
+    <p>
+      Its astronomical features calculate Golden and Blue Hour, lunar phases and a multi-year
+      lunar calendar, periods of true astronomical darkness, night visibility and solunar
+      activity, using methods adapted from Jean Meeus's <cite>Astronomical Algorithms</cite>.
+      Official alerts from Environment and Climate Change Canada and Europe's MeteoAlarm network
+      are available on an opt-in basis, and home screen widgets refresh from a shared cache
+      instead of polling independently. Additional themes and forecast providers can be installed
+      through declarative extension manifests.
+    </p>
+
+    <table>
+      <tr><th scope="row">Language</th><td>Kotlin</td></tr>
+      <tr><th scope="row">Platform</th><td>Android, minSdk 33</td></tr>
+      <tr><th scope="row">Build</th><td>Gradle (Kotlin DSL), R8 on release builds</td></tr>
+      <tr><th scope="row">Tests</th><td>216 automated tests</td></tr>
+      <tr><th scope="row">Data</th><td>Open-Meteo; ECCC CAP-CP and MeteoAlarm alerts</td></tr>
+      <tr><th scope="row">Forecast models</th><td>GEM, GFS, GEFS, ECMWF, CMA-GFS</td></tr>
+      <tr><th scope="row">Version</th><td>0.8.2 (VC30), November 3, 2026; public beta</td></tr>
+      <tr><th scope="row">Licence</th><td>GPL-3.0</td></tr>
+      <tr>
+        <th scope="row">Links</th>
+        <td>
+          <a href="https://www.weatherapplibre.ca">Homepage</a> |
+          <a href="https://play.google.com/store/apps/details?id=com.weatherapp.libre">Google Play</a> |
+          <a href="https://github.com/adamjeremy-sk/WeatherAPP">Source</a>
+        </td>
+      </tr>
+    </table>
+  </main>
+
+  <footer>
+    <hr>
+    <p>&copy; 2026 Adam Jeremy</p>
+  </footer>
+
+</body>
+</html>
