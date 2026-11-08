@@ -118,4 +118,4 @@ If you are working on similar arrangements of planner, executor and human author
 
 **Read the process documents:** [`AGENTS.md`](https://github.com/adamjeremy-sk/Vermilion-Editor/blob/main/AGENTS.md) ·
 [`AI_ONBOARDING.md`](https://github.com/adamjeremy-sk/Vermilion-Editor/blob/main/AI_ONBOARDING.md) ·
-[Roadmap](https://github.com/adamjeremy-sk/Vermilion-Editor/blob/main/docs/roadmap.md)
+[`Roadmap`](https://github.com/adamjeremy-sk/Vermilion-Editor/blob/main/docs/roadmap.md)
