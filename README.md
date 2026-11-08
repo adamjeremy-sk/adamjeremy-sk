@@ -8,7 +8,7 @@ The experiment is being conducted through Vermilion Editor, a code editor writte
 
 ---
 
-TL;DR
+## TL;DR
 I'm building Vermilion Editor, a native Linux code editor in C++17.
 
 The editor is interesting, but the process is the real experiment.
@@ -22,7 +22,7 @@ Every change passes through a gate process that produces verifiable evidence, ke
 
 The question I'm trying to answer is:
 
-    Can a single developer use AI extensively without giving up control of architecture, verification, or source history?
+Can a single developer use AI extensively without giving up control of architecture, verification, or source history?
 
 ---
 
