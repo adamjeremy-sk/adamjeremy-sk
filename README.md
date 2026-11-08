@@ -1,4 +1,4 @@
-# Adam Hainstock
+# Adam Jeremy
 
 I build software on Linux, and I am currently running a deliberate experiment in how a single developer can use
 artificial-intelligence models to write a substantial native application without surrendering control over its
