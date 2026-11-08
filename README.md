@@ -1,22 +1,36 @@
 # Adam Jeremy
 
-I build software on Linux and I'm running an experiment in AI-assisted development: can a single developer use local and cloud models to build a substantial native application without giving up control of architecture, correctness, or source history?
+I build software on Linux and I'm running an experiment in AI-assisted development: can a single developer use local 
+and cloud models to build a substantial native application without giving up control of architecture, correctness, or 
+source history?
 
-The vehicle for that experiment is **[Vermilion Editor](https://github.com/adamjeremy-sk/Vermilion-Editor)**, a code
-editor written from scratch in C++17 on GTK 4 and GtkSourceView 5, with a built-in agent, a debugger, a terminal and a
-live model monitor. The editor matters to me, but the method of building it is what I want to describe here.
+The experiment is being conducted through Vermilion Editor, a code editor written from scratch in C++17, GTK 4 and GtkSourceView 5.
+
+---
+
+TL;DR
+I'm building Vermilion Editor, a native Linux code editor in C++17.
+
+The editor is interesting, but the process is the real experiment.
+
+Instead of letting one AI model plan, write and approve code, I split those responsibilities across three participants:
+
+Me, as owner and final authority
+Claude, as planner and auditor
+A local Qwen model, as the coding agent
+Every change passes through a gate process that produces verifiable evidence, keeps memory in project files rather than conversations, and assumes that every model will eventually forget instructions, make mistakes, or attempt shortcuts.
+
+The question I'm trying to answer is:
+
+    Can a single developer use AI extensively without giving up control of architecture, verification, or source history?
 
 ---
 
 ## The idea
 
-Most AI-assisted coding today asks one model to do everything: understand the request, plan the change, write the code
-and judge whether the result is acceptable. That arrangement concentrates both the work and the verification in the same
-place, which means the model is effectively grading its own homework.
+Most AI-assisted coding today asks one model to do everything: understand the request, plan the change, write the code, and judge whether the result is acceptable. That arrangement concentrates both execution and verification in the same place, so the model is effectively grading its own homework.
 
-My approach separates those responsibilities across three participants, each chosen for what it does reliably, and binds
-them together with a written protocol that assumes every model will eventually forget its instructions, misreport its
-results or cut a corner.
+My approach separates those responsibilities across three participants, each chosen for a role it performs reliably. They are coordinated through a written protocol built on a pessimistic assumption: every model will eventually forget instructions, misreport results, misunderstand requirements, or take a shortcut.
 
 | Role | Who | Responsibility |
 |---|---|---|
@@ -24,10 +38,7 @@ results or cut a corner.
 | **Orchestrator** | Claude (Anthropic), working inside a claude.ai Project | Plans each step, writes self-contained prompts, audits the agent's work against the real working tree, maintains the process documents. |
 | **Coding agent** | Qwen3.8-27B, quantised (Q4_K_M), served locally by llama.cpp, driven by OpenCode over ACP inside CLion | Executes exactly one logical step per session and stops. |
 
-The local model writes nearly all of the code. It is private, inexpensive to run and surprisingly capable, but it has no
-memory between sessions and its judgement is uneven. The Orchestrator supplies the judgement and the continuity; it reads
-my working tree directly (read-only) through the Claude desktop app, so its audits rest on the actual files rather than on
-the agent's description of them.
+The local model writes most of the code. It is private, inexpensive to run, and surprisingly capable, but it has no memory between sessions and its judgement is uneven. The Orchestrator provides continuity and independent review. Through the Claude desktop application it can inspect my working tree directly in read-only mode, allowing audits to be based on the actual source tree rather than on the agent's description of its work.
 
 ---
 
